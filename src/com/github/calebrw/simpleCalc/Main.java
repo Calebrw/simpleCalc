@@ -22,8 +22,8 @@ public class Main {
             final char operator = input3.trim().charAt(0);
 
             // Convert Stings to Integers
-            final Double i1 = Double.parseDouble(input1);
-            final Double i2 = Double.parseDouble(input2);
+            final Double i1 = Double.parseDouble(input1.trim());
+            final Double i2 = Double.parseDouble(input2.trim());
 
             // Perform Operation
             Double result = null;
