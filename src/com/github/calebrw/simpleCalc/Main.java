@@ -59,6 +59,11 @@ public class Main {
             System.out.println(errorMessage);
             System.out.println(npe.getMessage());
 
+        } catch (ArithmeticException ae) {
+
+            System.out.println("There was a problem with your calculation.");
+            System.out.println(ae.getMessage());
+
         } catch (Exception e) {
 
             System.out.println(errorMessage);
