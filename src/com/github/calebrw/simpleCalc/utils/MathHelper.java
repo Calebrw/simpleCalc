@@ -58,6 +58,7 @@ public class MathHelper {
         int i = (int)Math.round(d);
 
         if (i > 1) {
+            if (i > 12) { throw new ArithmeticException("You cannot perform a factorial on a number more than 12."); }
             int result = i;
                 result *= factorial((double)i - 1d);
             return (double)result;
