@@ -28,6 +28,11 @@ public class MortCalc {
 
         scanner.close();
 
+        Calculation(principal, annualInterest, termYears);
+
+    }
+
+    private static void Calculation(double principal, float annualInterest, int termYears) {
         float monthlyInterest = annualInterest / MONTHS_IN_YEAR;
         int termMonths = termYears * MONTHS_IN_YEAR;
 
@@ -38,6 +43,5 @@ public class MortCalc {
 
         System.out.println("Monthly payment: " + NumberFormat.getCurrencyInstance().format(monthlyPayment));
         System.out.println("Total Payments: " + NumberFormat.getCurrencyInstance().format(totalPayment));
-
     }
 }
