@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class MortCalc {
 
-    private static int MONTHS_IN_YEAR = 12;
+    private static final int MONTHS_IN_YEAR = 12;
 
     public static void main(String[] args) {
 
