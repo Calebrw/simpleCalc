@@ -9,26 +9,33 @@ public class MortCalc {
 
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
+        double principal = 0;
+        float annualInterest = 0;
+        int termYears = 0;
+        try {
+            Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter the principal amount:");
-        double principal = scanner.nextDouble();
+            System.out.println("Enter the principal amount:");
+            principal = scanner.nextDouble();
 
-        System.out.println("Enter the annual interest rate:");
-        float annualInterest = scanner.nextFloat();
+            System.out.println("Enter the annual interest rate:");
+            annualInterest = scanner.nextFloat();
 
-        if (annualInterest > .5) {
-            System.out.println("Interest Rate too high.");
-            System.out.println("Dividing by 100.");
-            annualInterest /= 100;
+            if (annualInterest > .5) {
+                System.out.println("Interest Rate too high.");
+                System.out.println("Dividing by 100.");
+                annualInterest /= 100;
+            }
+
+            System.out.println("Enter the term in years:");
+            termYears = scanner.nextInt();
+
+            scanner.close();
+
+            Calculation(principal, annualInterest, termYears);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
-
-        System.out.println("Enter the term in years:");
-        int termYears = scanner.nextInt();
-
-        scanner.close();
-
-        Calculation(principal, annualInterest, termYears);
 
     }
 
