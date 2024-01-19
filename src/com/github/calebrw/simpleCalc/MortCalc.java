@@ -17,6 +17,12 @@ public class MortCalc {
         System.out.println("Enter the annual interest rate:");
         float annualInterest = scanner.nextFloat();
 
+        if (annualInterest > .5) {
+            System.out.println("Interest Rate too high.");
+            System.out.println("Dividing by 100.");
+            annualInterest /= 100;
+        }
+
         System.out.println("Enter the term in years:");
         int termYears = scanner.nextInt();
 
