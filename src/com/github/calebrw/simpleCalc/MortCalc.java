@@ -43,7 +43,7 @@ public class MortCalc {
 
         do {
             System.out.println("Enter the principal amount:");
-            while ( !scanner.hasNextDouble()) {
+            while (!scanner.hasNextDouble()) {
                 System.out.println("That is not a number.");
                 scanner.next();
             }
@@ -52,7 +52,7 @@ public class MortCalc {
 
         do {
             System.out.println("Enter the annual interest rate:");
-            while ( !scanner.hasNextFloat()) {
+            while (!scanner.hasNextFloat()) {
                 System.out.println("That is not a number.");
                 scanner.next();
             }
@@ -70,7 +70,7 @@ public class MortCalc {
 
         do {
             System.out.println("Enter the term in years:");
-            while ( !scanner.hasNextInt()) {
+            while (!scanner.hasNextInt()) {
                 System.out.println("That is not a number.");
                 scanner.next();
             }
@@ -83,15 +83,15 @@ public class MortCalc {
     /**
      * Calculates the mortgage's monthly payment
      *
-     * @see     <a href="https://en.wikipedia.org/wiki/Mortgage_calculator">Mortgage calculator on Wikipedia</a>
+     * @see <a href="https://en.wikipedia.org/wiki/Mortgage_calculator">Mortgage calculator on Wikipedia</a>
      */
     private void calculate() {
         float monthlyInterest = this.annualInterest / MONTHS_IN_YEAR;
         int termMonths = this.termYears * MONTHS_IN_YEAR;
 
         double monthlyPayment = this.principal *
-                ( ( monthlyInterest * Math.pow(1 + monthlyInterest, termMonths ) )
-                / ( Math.pow(1 + monthlyInterest, termMonths) - 1 ) );
+                ((monthlyInterest * Math.pow(1 + monthlyInterest, termMonths))
+                        / (Math.pow(1 + monthlyInterest, termMonths) - 1));
         double totalPayment = monthlyPayment * termMonths;
 
         System.out.println("Monthly payment: " + NumberFormat.getCurrencyInstance().format(monthlyPayment));
