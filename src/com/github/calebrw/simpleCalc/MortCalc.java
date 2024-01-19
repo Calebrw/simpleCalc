@@ -19,12 +19,24 @@ public class MortCalc {
             Scanner scanner = new Scanner(System.in);
 
             // The principal is the total amount of the loan
-            System.out.println("Enter the principal amount:");
-            principal = scanner.nextDouble();
+            do {
+                System.out.println("Enter the principal amount:");
+                while ( !scanner.hasNextDouble()) {
+                    System.out.println("That is not a number.");
+                    scanner.next();
+                }
+                principal = scanner.nextDouble();
+            } while (principal <= 0);
 
             // The Annual Interest Rate
-            System.out.println("Enter the annual interest rate:");
-            annualInterest = scanner.nextFloat();
+            do {
+                System.out.println("Enter the annual interest rate:");
+                while ( !scanner.hasNextFloat()) {
+                    System.out.println("That is not a number.");
+                    scanner.next();
+                }
+                annualInterest = scanner.nextFloat();
+            } while (annualInterest <= 0);
 
             // If the interest rate is larger than .5 (aka 50%)
             // then divide by 100 to get the actual percentage.
@@ -36,8 +48,14 @@ public class MortCalc {
             }
 
             // Many mortgages are in 10, 15, 20, and 30 year terms
-            System.out.println("Enter the term in years:");
-            termYears = scanner.nextInt();
+            do {
+                System.out.println("Enter the term in years:");
+                while ( !scanner.hasNextInt()) {
+                    System.out.println("That is not a number.");
+                    scanner.next();
+                }
+                termYears = scanner.nextInt();
+            } while (termYears <= 0);
 
             scanner.close();
 
